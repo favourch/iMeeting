@@ -1,0 +1,154 @@
+2012/09/24 09:52:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`.
+in /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php (248)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php (18)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php (19)
+2012/09/24 09:52:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand không thể thi hành câu truy vấn SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`' in /var/www/imeeting-web/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/www/imeeting-web/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php(248): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php(18): GxActiveRecord->findAllAttributes(NULL, true)
+#5 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#6 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#7 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#8 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php(19): CController->renderPartial('_form', Array)
+#9 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#10 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#11 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#12 /var/www/imeeting-web/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /var/www/imeeting-web/imeeting/protected/controllers/RoomDirectoryController.php(27): CController->render('create', Array)
+#14 /var/www/imeeting-web/framework/web/actions/CInlineAction.php(50): RoomDirectoryController->actionCreate()
+#15 /var/www/imeeting-web/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/www/imeeting-web/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /var/www/imeeting-web/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/imeeting-web/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /var/www/imeeting-web/framework/web/CWebApplication.php(135): CWebApplication->runController('roomDirectory/c...')
+#20 /var/www/imeeting-web/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/imeeting-web/imeeting/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=roomDirectory/create
+HTTP_REFERER=http://www.imeeting.vn/index.php?r=RoomDirectory
+---
+2012/09/24 09:53:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`.
+in /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php (248)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php (18)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php (19)
+2012/09/24 09:53:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand không thể thi hành câu truy vấn SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`' in /var/www/imeeting-web/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/www/imeeting-web/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php(248): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php(18): GxActiveRecord->findAllAttributes(NULL, true)
+#5 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#6 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#7 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#8 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php(19): CController->renderPartial('_form', Array)
+#9 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#10 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#11 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#12 /var/www/imeeting-web/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /var/www/imeeting-web/imeeting/protected/controllers/RoomDirectoryController.php(27): CController->render('create', Array)
+#14 /var/www/imeeting-web/framework/web/actions/CInlineAction.php(50): RoomDirectoryController->actionCreate()
+#15 /var/www/imeeting-web/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/www/imeeting-web/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /var/www/imeeting-web/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/imeeting-web/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /var/www/imeeting-web/framework/web/CWebApplication.php(135): CWebApplication->runController('roomDirectory/c...')
+#20 /var/www/imeeting-web/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/imeeting-web/imeeting/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=roomDirectory/create
+HTTP_REFERER=http://www.imeeting.vn/index.php?r=RoomDirectory
+---
+2012/09/24 09:53:37 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`.
+in /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php (248)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php (18)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php (19)
+2012/09/24 09:53:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand không thể thi hành câu truy vấn SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`' in /var/www/imeeting-web/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/www/imeeting-web/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php(248): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php(18): GxActiveRecord->findAllAttributes(NULL, true)
+#5 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#6 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#7 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#8 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php(19): CController->renderPartial('_form', Array)
+#9 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#10 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#11 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#12 /var/www/imeeting-web/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /var/www/imeeting-web/imeeting/protected/controllers/RoomDirectoryController.php(27): CController->render('create', Array)
+#14 /var/www/imeeting-web/framework/web/actions/CInlineAction.php(50): RoomDirectoryController->actionCreate()
+#15 /var/www/imeeting-web/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/www/imeeting-web/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /var/www/imeeting-web/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/imeeting-web/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /var/www/imeeting-web/framework/web/CWebApplication.php(135): CWebApplication->runController('roomDirectory/c...')
+#20 /var/www/imeeting-web/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/imeeting-web/imeeting/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=roomDirectory/create
+HTTP_REFERER=http://www.imeeting.vn/index.php?r=RoomDirectory
+---
+2012/09/24 10:07:19 [error] [exception.CException] exception 'CException' with message 'Rooms and its behaviors do not have a method or closure named "findAllAttributes".' in /var/www/imeeting-web/framework/base/CComponent.php:266
+Stack trace:
+#0 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(226): CComponent->__call('findAllAttribut...', Array)
+#1 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php(18): CActiveRecord->__call('findAllAttribut...', Array)
+#2 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php(18): Rooms->findAllAttributes(NULL, true)
+#3 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#4 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#5 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#6 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php(19): CController->renderPartial('_form', Array)
+#7 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#8 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#9 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#10 /var/www/imeeting-web/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#11 /var/www/imeeting-web/imeeting/protected/controllers/RoomDirectoryController.php(27): CController->render('create', Array)
+#12 /var/www/imeeting-web/framework/web/actions/CInlineAction.php(50): RoomDirectoryController->actionCreate()
+#13 /var/www/imeeting-web/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#14 /var/www/imeeting-web/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#15 /var/www/imeeting-web/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 /var/www/imeeting-web/framework/web/CWebApplication.php(276): CController->run('create')
+#17 /var/www/imeeting-web/framework/web/CWebApplication.php(135): CWebApplication->runController('roomDirectory/c...')
+#18 /var/www/imeeting-web/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#19 /var/www/imeeting-web/imeeting/index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/index.php?r=roomDirectory/create
+HTTP_REFERER=http://www.imeeting.vn/index.php?r=RoomDirectory
+---
+2012/09/24 10:09:55 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`.
+in /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php (248)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php (18)
+in /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php (19)
+2012/09/24 10:09:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand không thể thi hành câu truy vấn SQL: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `tbl_rooms` `t`' at line 1. The SQL statement executed was: SELECT id,  FROM `tbl_rooms` `t`' in /var/www/imeeting-web/framework/db/CDbCommand.php:528
+Stack trace:
+#0 /var/www/imeeting-web/framework/db/CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 /var/www/imeeting-web/framework/db/ar/CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/imeeting-web/imeeting/protected/extensions/giix-components/GxActiveRecord.php(248): CActiveRecord->findAll(Object(CDbCriteria))
+#4 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/_form.php(18): GxActiveRecord->findAllAttributes(NULL, true)
+#5 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#6 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#7 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#8 /var/www/imeeting-web/imeeting/protected/views/roomDirectory/create.php(19): CController->renderPartial('_form', Array)
+#9 /var/www/imeeting-web/framework/web/CBaseController.php(127): require('/var/www/imeeti...')
+#10 /var/www/imeeting-web/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/imeeti...', Array, true)
+#11 /var/www/imeeting-web/framework/web/CController.php(870): CBaseController->renderFile('/var/www/imeeti...', Array, true)
+#12 /var/www/imeeting-web/framework/web/CController.php(783): CController->renderPartial('create', Array, true)
+#13 /var/www/imeeting-web/imeeting/protected/controllers/RoomDirectoryController.php(27): CController->render('create', Array)
+#14 /var/www/imeeting-web/framework/web/actions/CInlineAction.php(50): RoomDirectoryController->actionCreate()
+#15 /var/www/imeeting-web/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#16 /var/www/imeeting-web/framework/web/CController.php(287): CController->runAction(Object(CInlineAction))
+#17 /var/www/imeeting-web/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /var/www/imeeting-web/framework/web/CWebApplication.php(276): CController->run('create')
+#19 /var/www/imeeting-web/framework/web/CWebApplication.php(135): CWebApplication->runController('roomDirectory/c...')
+#20 /var/www/imeeting-web/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#21 /var/www/imeeting-web/imeeting/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/index.php?r=roomDirectory/create
+HTTP_REFERER=http://www.imeeting.vn/index.php?r=RoomDirectory
+---

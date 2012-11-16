@@ -1,0 +1,53 @@
+#navcontainer {
+	position: relative;
+	height: 80px;
+	clear: both;
+}
+#navcontainer ul {
+	display: block;
+	padding: 0;
+	margin: 0;
+	
+}
+#navcontainer li
+{
+	display: block;
+	list-style-type: none;
+	padding-right: 20px;
+	float: right;
+}
+#navcontainer img
+{
+	position: absolute;
+	left: 15px;
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
+}
+#navcontainer img:hover
+{
+	opacity:1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+#navcontainer li img .disabled
+{
+	opacity:0.1;
+	filter:alpha(opacity=10); /* For IE8 and earlier */
+}
+#navcontainer a {
+	width: 98%;
+	position: relative;
+	color: #FFFFFF;
+	text-decoration: none;
+	overflow: hidden;
+	display: block;
+	text-align: center;
+	 
+}
+#navcontainer span.item-title{
+	
+	
+	padding-top: 50px;
+	text-align: center;
+	display: block;
+	 
+}
