@@ -93,7 +93,10 @@ class AccountController extends RController
 					//iMeeting.vn - Set permisstion
 					$authenticatedName = Rights::module()->authenticatedName;
 					Rights::assign($authenticatedName, $model->id);
-
+					if($_POST['User']['Role']=='Presenter'){
+						$presenterName = 'Presenter';
+						Rights::assign($authenticatedName, $model->id);
+					}
 					$profile->user_id=$model->id;
 					$profile->save();
 
