@@ -5,6 +5,7 @@ return array(
 	'Vào phòng' => 'Join',
 	'Tên của bạn' => 'Your name',
 	'Lưu thay đổi' => 'Save changes',
+	'Quản lý phòng họp' => 'Room\'s moderator',
 	/* toolbar*/
 	'Danh sách phòng' => 'Please choose room:',
 	'Chọn phòng họp' => 'Select room',
@@ -21,7 +22,7 @@ return array(
 	'Thông tin chi tiết' => 'Description',
 	'Giới hạn số lượng thành viên' => ' Limit concurrent',
 	'Ngày tạo' => 'Creation date',
-	'Quản lý phòng họp' => 'Manage room',
+	
 	'Tạo phòng họp' => 'Create room',
 	'Thông tin đánh dấu' => 'Fields with',
 	'là bắt buộc' => 'is required',

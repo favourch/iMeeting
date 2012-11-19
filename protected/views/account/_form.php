@@ -4,14 +4,6 @@
 
 	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 
-	<?php //echo CHtml::errorSummary(array($model,$profile)); ?>
-	<!--
-	<div class="row">
-		<?php echo CHtml::activeLabelEx($model,'username', array('style'=>"width:240px")); ?>
-		<?php echo CHtml::activeTextField($model,'username',array('size'=>20,'maxlength'=>20)); ?>
-		<?php echo CHtml::error($model,'username'); ?>
-	</div>
-	-->
 	<div class="row">
 		<?php echo CHtml::activeLabelEx($model,'email', array('style'=>"width:240px")); ?>
 		<?php echo CHtml::activeTextField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
@@ -30,7 +22,15 @@
 		<?php echo CHtml::activeDropDownList($model,'status',User::itemAlias('UserStatus')); ?>
 		<?php echo CHtml::error($model,'status'); ?>
 	</div>
-
+	
+	<div class="row">
+		<label style="width:240px"> <?php echo Yii::t('conference','Quản lý phòng họp'); ?></label>
+		<?php
+		
+		 echo CHtml::CheckBox('presenter',$presenter); ?>
+		
+	</div>
+	
 <?php 
 		$profileFields=$profile->getFields();
 		if ($profileFields) {

@@ -121,17 +121,34 @@ class AccountController extends RController
 	{
 		$model=$this->loadModel();
 		$profile=$model->profile;
+		$rights = Rights::getAssignedRoles($model->id);
+		$isPresenter = false;
+		foreach($rights as $r){
+			if($r->name == Rights::module()->presenterName){
+				$isPresenter = true;
+			}
+
+		}
 		if(isset($_POST['User']))
 		{
-			list($_POST['User']['username']) = split('@',$_POST['User']['email']);
+			list($_POST['User']['username']) = @split('@',$_POST['User']['email']);
 			$model->attributes=$_POST['User'];
-			$profile->attributes=$_POST['Profile'];
-
+			$profile->attributes=$_POST['User'];
+			$presenter = $_POST['presenter'];
+			//die($presenter);
+			
 			if($model->validate()&&$profile->validate()) {
 				$old_password = User::model()->notsafe()->findByPk($model->id);
 				if ($old_password->password!=$model->password) {
 					$model->password=Yii::app()->getModule('user')->encrypting($model->password);
 					$model->activkey=Yii::app()->getModule('user')->encrypting(microtime().$model->password);
+				}
+				if($_POST['User']['Role']=='Presenter'){
+						$presenterName = 'Presenter';
+						Rights::assign($authenticatedName, $model->id);
+				}else{
+						$presenterName = 'Presenter';
+						Rights::revoke($authenticatedName, $model->id);
 				}
 				$model->save();
 				$profile->save();
@@ -143,6 +160,7 @@ class AccountController extends RController
 		$this->render('update',array(
 			'model'=>$model,
 			'profile'=>$profile,
+			'presenter' => $isPresenter
 
 		));
 	}

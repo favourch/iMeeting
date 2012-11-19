@@ -36,4 +36,5 @@ echo $this->renderPartial('_menu', array(
 		),
 	)); 
 */
-	echo $this->renderPartial('_form', array('model'=>$model,'profile'=>$profile)); ?>
+
+	echo $this->renderPartial('_form', array('model'=>$model,'profile'=>$profile, 'presenter'=>$presenter)); ?>

@@ -108,7 +108,7 @@ class User extends CActiveRecord
 			'lastvisit' => UserModule::t("Last visit"),
 			'superuser' => UserModule::t("Superuser"),
 			'status' => UserModule::t("Status"),
-			'company_id' => UserModule::t("Company")
+			'company_id' => UserModule::t("Company"),
 		);
 	}
 	
