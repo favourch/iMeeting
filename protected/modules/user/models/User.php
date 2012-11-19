@@ -77,7 +77,24 @@ class User extends CActiveRecord
 			)
 			));
 	}
+	public function getRole(){
+		$role[] =  Yii::t('conference',Rights::module()->authenticatedName);
+		$rights = Rights::getAssignedRoles($this->id);
+		foreach($rights as $r){
+			if($r->name == Rights::module()->moderatorName){
 
+				$role[] =  Yii::t('conference',Rights::module()->moderatorName);
+			}
+			if($r->name == Rights::module()->presenterName){
+
+				$role[] =  Yii::t('conference',Rights::module()->presenterName);
+			}
+		
+		}
+	
+		return implode(', ', $role);
+
+	}
 	/**
 	 * @return array relational rules.
 	 */
@@ -109,6 +126,7 @@ class User extends CActiveRecord
 			'superuser' => UserModule::t("Superuser"),
 			'status' => UserModule::t("Status"),
 			'company_id' => UserModule::t("Company"),
+			'role'=>UserModule::t("Role"),
 		);
 	}
 	

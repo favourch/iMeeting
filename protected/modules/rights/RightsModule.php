@@ -33,6 +33,7 @@ class RightsModule extends CWebModule
 	* @property string the name of the presenter role.
 	*/
 	public $presenterName = 'Presenter';
+	public $moderatorName = 'Moderator';
 	/**
 	* @property string the name of the user model class.
 	*/

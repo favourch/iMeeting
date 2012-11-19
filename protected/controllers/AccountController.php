@@ -47,7 +47,6 @@ class AccountController extends RController
 				'pageSize'=>Yii::app()->getModule('user')->user_page_size,
 			),
 		));
-
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -73,6 +72,7 @@ class AccountController extends RController
 	{
 		$model=new User;
 		$profile=new Profile;
+		$presenterName = Rights::module()->presenterName;
 		if(isset($_POST['User']))
 		{
 			list($_POST['User']['username']) = split('@',$_POST['User']['email']);
@@ -93,9 +93,9 @@ class AccountController extends RController
 					//iMeeting.vn - Set permisstion
 					$authenticatedName = Rights::module()->authenticatedName;
 					Rights::assign($authenticatedName, $model->id);
-					if($_POST['User']['Role']=='Presenter'){
-						$presenterName = 'Presenter';
-						Rights::assign($authenticatedName, $model->id);
+					
+					if(isset($_POST['presenter'])){
+						Rights::assign($presenterName, $model->id);
 					}
 					$profile->user_id=$model->id;
 					$profile->save();
@@ -122,9 +122,11 @@ class AccountController extends RController
 		$model=$this->loadModel();
 		$profile=$model->profile;
 		$rights = Rights::getAssignedRoles($model->id);
+		$presenterName = Rights::module()->presenterName;
+
 		$isPresenter = false;
 		foreach($rights as $r){
-			if($r->name == Rights::module()->presenterName){
+			if($r->name == $presenterName){
 				$isPresenter = true;
 			}
 
@@ -133,22 +135,20 @@ class AccountController extends RController
 		{
 			list($_POST['User']['username']) = @split('@',$_POST['User']['email']);
 			$model->attributes=$_POST['User'];
-			$profile->attributes=$_POST['User'];
-			$presenter = $_POST['presenter'];
-			//die($presenter);
-			
+			$profile->attributes=$_POST['Profile'];
+
 			if($model->validate()&&$profile->validate()) {
 				$old_password = User::model()->notsafe()->findByPk($model->id);
 				if ($old_password->password!=$model->password) {
 					$model->password=Yii::app()->getModule('user')->encrypting($model->password);
 					$model->activkey=Yii::app()->getModule('user')->encrypting(microtime().$model->password);
 				}
-				if($_POST['User']['Role']=='Presenter'){
-						$presenterName = 'Presenter';
-						Rights::assign($authenticatedName, $model->id);
-				}else{
-						$presenterName = 'Presenter';
-						Rights::revoke($authenticatedName, $model->id);
+
+				if(isset($_POST['presenter'])){
+					Rights::assign($presenterName, $model->id);
+				}
+				else{
+					Rights::revoke($presenterName, $model->id);
 				}
 				$model->save();
 				$profile->save();

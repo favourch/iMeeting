@@ -1,20 +1,19 @@
 <?php
 	$isMod = false;
+
+	$role[] =  Yii::t('conference',Rights::module()->authenticatedName);
 	if(Yii::app()->user->isGuest){
 		$isGuest = true;
 	}else{
 		$isUser = true;
 		$rights = Rights::getAssignedRoles(Yii::app()->user->id);
 		foreach($rights as $r){
-			if($r->name =='Moderator'){
+			if($r->name == Rights::module()->moderatorName){
 				$isMod = true;
 			}
-		
 		}
-	
-		
-				
 	}
+
 	$isAdmin = Yii::app()->getModule('user')->isAdmin()	;
 $this->breadcrumbs=array(
 	UserModule::t('Users')=>array('admin'),
@@ -35,9 +34,14 @@ $this->breadcrumbs=array(
 	));*/
 ?>
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
+
+<?php 
+//
+//$dataProvider->setData(array_merge($dataProvider->getData(), array('userRole' => array('userRole'=>$userRole))));
+$this->widget('zii.widgets.grid.CGridView', array(
 	'id'=> 'grid',
 	'dataProvider'=>$dataProvider,
+	//'role' => $userRole,
 	'columns'=>array(
 		/*
 		array(
@@ -67,7 +71,10 @@ $this->breadcrumbs=array(
 			'name'=>'status',
 			'value'=>'User::itemAlias("UserStatus",$data->status)',
 		),
-
+		array(
+'name' => 'role',
+'value' => '$data->getRole()'
+			),
 		array(
 			'class'=>'CButtonColumn',
 			'deleteButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/delete.png',

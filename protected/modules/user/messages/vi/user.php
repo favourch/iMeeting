@@ -128,7 +128,9 @@ return array(
 	'Display order of fields.' => 'Hiển thị sắp xếp của các trường.',
     'Not visited' => 'Chưa viếng thăm',
 	'Manage Users'=> 'Quản lý tài khoản',
-    'Presenter' => 'Quản lý phòng'
+    'Presenter' => 'Quản lý phòng',
+    'Role' => 'Quyền hạn',
+    
     
     
     

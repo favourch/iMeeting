@@ -1,22 +1,38 @@
 <?php
 	$isMod = false;
+	
+	$role[] =  Yii::t('conference',Rights::module()->authenticatedName);
 	if(Yii::app()->user->isGuest){
 		$isGuest = true;
 	}else{
 		$isUser = true;
 		$rights = Rights::getAssignedRoles(Yii::app()->user->id);
 		foreach($rights as $r){
-			if($r->name =='Moderator'){
+			if($r->name == Rights::module()->moderatorName){
 				$isMod = true;
+	
 			}
+			
 		
 		}
-	
-		
-				
 	}
+	
+	$rights = Rights::getAssignedRoles($model->id);
+		foreach($rights as $r){
+			if($r->name == Rights::module()->moderatorName){
+
+				$role[] =  Yii::t('conference',Rights::module()->moderatorName);
+			}
+			if($r->name == Rights::module()->presenterName){
+
+				$role[] =  Yii::t('conference',Rights::module()->presenterName);
+			}
+		
+	}
+
+	$userRole = implode(', ', $role);
 	$isAdmin = Yii::app()->getModule('user')->isAdmin()	;
-$this->breadcrumbs=array(
+	$this->breadcrumbs=array(
 	UserModule::t('Users')=>array('admin'),
 	$model->username,
 );
@@ -72,6 +88,10 @@ echo $this->renderPartial('_menu', array(
 		array(
 			'name' => 'status',
 			'value' => User::itemAlias("UserStatus",$model->status),
+		),
+		array(
+			'name' => 'Room\'s role',
+			'value' => $userRole
 		)
 	);
 	
