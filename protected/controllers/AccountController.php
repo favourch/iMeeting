@@ -73,6 +73,14 @@ class AccountController extends RController
 		$model=new User;
 		$profile=new Profile;
 		$presenterName = Rights::module()->presenterName;
+		$rights = Rights::getAssignedRoles($model->id);
+		$isPresenter = false;
+		foreach($rights as $r){
+			if($r->name == $presenterName){
+				$isPresenter = true;
+			}
+
+		}
 		if(isset($_POST['User']))
 		{
 			list($_POST['User']['username']) = split('@',$_POST['User']['email']);
@@ -109,7 +117,7 @@ class AccountController extends RController
 		$this->render('create',array(
 			'model'=>$model,
 			'profile'=>$profile,
-
+			'presenter' => $isPresenter,
 		));
 	}
 
