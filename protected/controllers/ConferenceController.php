@@ -498,4 +498,14 @@ class ConferenceController extends RController
 			Yii::app()->end();
 		}
 	}
+	  protected function gridDataColumn($data,$row)
+     {
+          // ... generate the output for the column
+ 
+          // Params:
+          // $data ... the current row data   
+         // $row ... the row index    
+         return $this->renderPartial('_view', array('data'=>$data));    
+    }      
+    
 }

@@ -34,7 +34,7 @@
 		//$concurrentUser = count($response['attendees']);
 		//var_dump($response['attendees']);
 	}else{
-		$concurrentUser =intval(BigBlueButton::countUsers( $data->id, $data->moderator_pw, $url, $salt )) ;
+		$concurrentUser =intval($bbb->countUsers( $data->id, $data->moderator_pw, $url, $salt )) ;
 		
 	}
 	?>

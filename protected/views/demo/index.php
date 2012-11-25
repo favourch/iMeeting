@@ -22,7 +22,7 @@
 	
 	</div>
 	<div style="width: 535px;height: 400px;display: block;float: right; padding-left: 20px">
-		<img src="images/demo.png" title="iMeeting demo" />
+		<div style="padding-left: 25px;"><img src="images/demo-2.png" title="iMeeting demo" /></div>
 		<!--<img src="images/features.jpg" title="iMeeting features" />-->
 		<br/>
 		<div style="padding-top: 10px">
