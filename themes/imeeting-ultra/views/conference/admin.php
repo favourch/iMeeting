@@ -93,6 +93,7 @@ $columns = array(
 		);
 
 }
+$this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
 	<!--[if !IE]>start section <![endif]-->
 	<div class="section">

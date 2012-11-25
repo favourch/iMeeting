@@ -10,7 +10,7 @@
 						<div class="title_wrapper_inner">
 							<span class="title_wrapper_middle"></span>
 							<div class="title_wrapper_content">
-								<h2>Quick Shortcuts</h2>
+								<h2></h2>
 								<ul class="section_menu right">
 									<li><a href="#" class="selected_lk"><span class="l"><span></span></span><span class="m"><em><?php echo Yii::t('conference','Bảng điều khiển'); ?></em><span></span></span><span class="r"><span></span></span></a></li>
 									<!--

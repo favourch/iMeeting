@@ -83,7 +83,7 @@ class AccountController extends RController
 		}
 		if(isset($_POST['User']))
 		{
-			list($_POST['User']['username']) = split('@',$_POST['User']['email']);
+			list($_POST['User']['username']) = @split('@',$_POST['User']['email']);
 
 			$model->attributes=$_POST['User'];
 			$model->activkey=Yii::app()->getModule('user')->encrypting(microtime().$model->password);

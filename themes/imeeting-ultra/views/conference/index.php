@@ -21,7 +21,7 @@ if($isMod){
 */
 
 $section_name = Yii::t('conference','Danh sách phòng họp');
-
+$this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
 
 
@@ -79,7 +79,8 @@ $section_name = Yii::t('conference','Danh sách phòng họp');
 										),
 										array(
 											'type'		=>'html',
-											'value'=>'CHtml::link(\'<img src="/images/joinvideoconference.png" title="Join Conference" width="100px" height="100px"/>\',array(\'/confernce/join\',\'room\'=>$data->id))'
+											'value'=>'CHtml::link(\'<img src="/images/play.png" title="Join Conference" width="100px" height="100px"/>\',array(\'/confernce/join\',\'room\'=>$data->id))',
+											'htmlOptions'=>array('style'=>'text-align:center'),
 											)
 									)
 								));

@@ -33,6 +33,7 @@
 	
 	 <script type="text/javascript" charset="utf-8">
       $(function(){
+        //$("input, textarea, select, button").uniform();
         $("input, textarea, select, button").uniform();
       });
     </script>

@@ -4,13 +4,6 @@ $this->breadcrumbs = array(
 	$model->label(2) => array('index'),
 	Yii::t('app', 'Manage'),
 );
-/*
-$this->menu = array(
-		array('label'=>Yii::t('app', 'List') . ' ' . $model->label(2), 'url'=>array('index')),
-		array('label'=>Yii::t('app', 'Create') . ' ' . $model->label(), 'url'=>array('create')),
-	);
-
- */ 
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
@@ -28,8 +21,9 @@ $('.reset').submit(function(){
 });
 
 ");
+$this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
-
+<!--[if !IE]>start setction<![endif]-->
 <div class="section">
 
 					<!--[if !IE]>start title wrapper<![endif]-->
@@ -45,7 +39,7 @@ $('.reset').submit(function(){
 						</div>
 						<span class="title_wrapper_bottom"></span>
 					</div>
-
+					<!--[if !IE]>end title wrapper<![endif]-->
 					<!--[if !IE]>start section content<![endif]-->
 					<div class="section_content">
 						<span class="section_content_top"></span>
@@ -108,7 +102,7 @@ $('.reset').submit(function(){
 
 							<!--[if !IE]>end  tabs<![endif]-->
 
-							<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
+							
 							</div>
 							<!--[if !IE]>start table_wrapper<![endif]-->
 							<div class="table_wrapper">

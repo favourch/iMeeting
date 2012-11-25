@@ -30,8 +30,9 @@ $this->breadcrumbs=array(
 			CHtml::link(UserModule::t('Create User'),array('create')),
 		),
 	));*/
+$this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
-
+<!--[if !IE]>start section<![endif]-->
 	<div class="section">
 
 					<!--[if !IE]>start title wrapper<![endif]-->
@@ -41,12 +42,12 @@ $this->breadcrumbs=array(
 							<span class="title_wrapper_middle"></span>
 							<div class="title_wrapper_content">
 								<h2><?php echo Yii::t("conference","Quản lý tài khoản");?></h2>
-								<a class="view_all_orders" href="#">View All Orders</a>
+								
 							</div>
 						</div>
 						<span class="title_wrapper_bottom"></span>
 					</div>
-
+					<!--[if !IE]>end title wrapper<![endif]-->
 					<!--[if !IE]>start section content<![endif]-->
 					<div class="section_content">
 						<span class="section_content_top"></span>
