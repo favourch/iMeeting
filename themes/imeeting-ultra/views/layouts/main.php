@@ -20,7 +20,7 @@
 	
 	
 	<link media="screen" rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/imeeting-ultra/admin.css">
-	
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
 	<!--[if lte IE 6]><link media="screen" rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin-ie.css" /><![endif]-->
 	
 	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin-ie.css" />-->
@@ -94,7 +94,7 @@
 	 if(Yii::app()->controller->id =='login') {
 		?>
 	<div style="float:left; width:1000px; height: 16px"></div>
-	<div style="width:1000px; height:235px; padding-bottom: 0px" >
+	<div style="width:1000px; height:275px; padding-bottom: 0px" >
 		<div style="float:left; width:20"><img src="images/border-left.png" /></div>
 		<div style="float:left;width:980">	 
 			<div style="float:left;width:980">

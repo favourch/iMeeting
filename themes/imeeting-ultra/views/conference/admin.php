@@ -60,13 +60,12 @@ if(Yii::app()->getModule('user')->isAdmin()){
 $columns = array(
 
 		array( 'name'=>'company_name', 'value'=>'$data->company->name' ),
-		'name',
-		'attendee_pw',
-		'moderator_pw',
-		'user_limit',
-		array(
-			'class'=>'CButtonColumn',
-		));
+			'name',
+			'attendee_pw',
+			'moderator_pw',
+			'user_limit',
+		
+	);
 }else{
 $columns = array(
 
@@ -75,7 +74,9 @@ $columns = array(
 		//'moderator_pw',
 		'user_limit',
 		'description',
-				array(
+		);
+}
+$columns[] = 		array(
 			'class'=>'CButtonColumn',
 			'deleteButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/delete.png',
 			'updateButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/update.png',
@@ -83,16 +84,15 @@ $columns = array(
 			'buttons' =>array(
 			 	'delete'=>array(
                         'label'=>'Delete?',
-                        //'url'=>Yii::app()->controller->createUrl("project/makeReviewable",array("id"=>$model->id)),
+                        
                         'options'=>array('class'=>'cssGridButton'),
 
                             ),
 				),
 			'htmlOptions'=>array('width'=>'110px')
-		),
 		);
+	
 
-}
 $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
 	<!--[if !IE]>start section <![endif]-->

@@ -56,7 +56,7 @@ http://www.skype.com/go/skypebuttons
 			<img src="images/support.png" />
 		</div>
 		<div style="clear:both"></div>
-		<div style="margin-top: 20px;">
+		<div style="margin-top: 20px;height: 330px" class="demo">
 			<div style="width: 100%; padding-top: 20px">
 				<div align="center" style="width: 33%; float: left">
 					<a href="index.php?r=videos/index"><img height="77px" src="/images/support_video.jpg" title="<?php echo Yii::t('common','Video hướng dẫn'); ?>" /></a>
@@ -101,3 +101,4 @@ http://www.skype.com/go/skypebuttons
 		</div>
 	</div>
 
+<div style="padding-bottom: 10px">&nbsp;</div>

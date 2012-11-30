@@ -6,9 +6,9 @@
 
 <div id="userAssignments">
 
-	<h2><?php echo Rights::t('core', 'Assignments for :username', array(
+	<h3><?php echo Rights::t('core', 'Assignments for :username', array(
 		':username'=>$model->getName()
-	)); ?></h2>
+	)); ?></h3>
 	
 	<div class="assignments span-12 first">
 

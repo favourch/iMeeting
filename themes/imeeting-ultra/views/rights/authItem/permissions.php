@@ -5,7 +5,6 @@
 
 <div id="permissions">
 
-	<h2><?php echo Rights::t('core', 'Permissions'); ?></h2>
 
 	<p>
 		<?php echo Rights::t('core', 'Here you can view and manage the permissions assigned to each role.'); ?><br />
@@ -16,21 +15,59 @@
 		)); ?>
 	</p>
 
-	<p><?php echo CHtml::link(Rights::t('core', 'Generate items for controller actions'), array('authItem/generate'), array(
-	   	'class'=>'generator-link',
-	)); ?></p>
 
-	<?php $this->widget('zii.widgets.grid.CGridView', array(
-		'dataProvider'=>$dataProvider,
-		'template'=>'{items}',
-		'emptyText'=>Rights::t('core', 'No authorization items found.'),
-		'htmlOptions'=>array('class'=>'grid-view permission-table'),
-		'columns'=>$columns,
-	)); ?>
+
+
 
 	<p class="info">*) <?php echo Rights::t('core', 'Hover to see from where the permission is inherited.'); ?></p>
 
-	<script type="text/javascript">
+
+
+</div>
+ <div class="table_tabs_menu" style="padding-top:10px">
+        <!--[if !IE]>start  tabs<![endif]-->
+<?php echo CHtml::link('<span><span><em>'. Rights::t('core', 'Generate items for controller actions') .'</em></span></span>', array('authItem/generate'), array(
+        'class'=>'update',
+    )); ?>
+        <!--[if !IE]>end  tabs<![endif]-->
+
+
+        </div>
+        <!--[if !IE]>start table_wrapper<![endif]-->
+        <div class="table_wrapper">
+            <div class="table_wrapper_inner">
+            <?php
+            $widget= $this->widget('application.components.widgets.ImeetingGridView', array(
+
+                'pager'=>array('cssFile'=>false,'class'=>'ImeetingLinkPager'),
+
+                'template'=>'{items} ',
+                'dataProvider'=>$dataProvider,
+                'cssFile' => false,
+                 'emptyText'=>Rights::t('core', 'No users found.'),
+
+                'columns'=>$columns,
+
+            ));
+
+             ?>
+    <div class="pagination_wrapper">
+        <span class="pagination_top"></span>
+        <div class="pagination_middle">
+        <div class="pagination">
+            <span class="page_no"><?php $widget->renderSummary(); ?></span>
+            <?php $widget->renderPager(); ?>
+        </div>
+        </div>
+        <span class="pagination_bottom"></span>
+        </div>
+
+            </div>
+        </div>
+        <!--[if !IE]>end table_wrapper<![endif]-->
+
+
+<script type="text/javascript">
 
 		/**
 		* Attach the tooltip to the inherited items.
@@ -49,5 +86,3 @@
 		});
 
 	</script>
-
-</div>

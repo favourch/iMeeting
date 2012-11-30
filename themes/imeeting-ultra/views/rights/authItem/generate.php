@@ -5,7 +5,7 @@
 
 <div id="generator">
 
-	<h2><?php echo Rights::t('core', 'Generate items'); ?></h2>
+	<h3><?php echo Rights::t('core', 'Generate items'); ?></h3>
 
 	<p><?php echo Rights::t('core', 'Please select which items you wish to generate.'); ?></p>
 

@@ -38,11 +38,32 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+$this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
-<?php $this->widget('ext.imeeting-toolbars.ImeetingToolbarsWidget',
-						array('model'=>isset($model)?$model:null, 'controller'=>'company', 'mod'=>$isMod || $isAdmin, 'index'=>false)
-); ?>
-<h1>Quản lý công ty</h1>
+
+
+
+<!--[if !IE]>start section<![endif]-->
+	<div class="section">
+
+					<!--[if !IE]>start title wrapper<![endif]-->
+					<div class="title_wrapper">
+						<span class="title_wrapper_top"></span>
+						<div class="title_wrapper_inner">
+							<span class="title_wrapper_middle"></span>
+							<div class="title_wrapper_content">
+								<h2><?php echo Yii::t('menu','Quản lý công ty');?></h2>
+								
+							</div>
+						</div>
+						<span class="title_wrapper_bottom"></span>
+					</div>
+					<!--[if !IE]>end title wrapper<![endif]-->
+					<!--[if !IE]>start section content<![endif]-->
+					<div class="section_content">
+						<span class="section_content_top"></span>
+
+						<div class="section_content_inner">
 
 <p>
 Bạn có thể sử dụng các biểu thức điều kiện như (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
@@ -55,39 +76,78 @@ hoặc <b>=</b>) để tìm kiếm chính xác hơn.
 	'model'=>$model,
 )); ?>
 </div><!-- search-form -->
+							<div class="table_tabs_menu">
+							<!--[if !IE]>start  tabs<![endif]-->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'itemsCssClass'=>'table-admin',
-	'columns'=>array(
-		'id',
-		'name',
-		'room_limit',
-		'user_limit',
-		'address',
-		'description',
-		
-		'phone',
-		'email',
-		//'owner_id',
-		
-				array(
-			'class'=>'CButtonColumn',
-			'deleteButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/delete.png',
-			'updateButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/update.png',
-			'viewButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/view.png',
-			'htmlOptions'=>array('width'=>'110px'),
-			'buttons' =>array(
-			 	'delete'=>array(
-                        'label'=>'Delete?',
-                        //'url'=>Yii::app()->controller->createUrl("project/makeReviewable",array("id"=>$model->id)),
-                        'options'=>array('class'=>'cssGridButton'),
-                        
-                            ),
-			),
-		),
-	//
-	),
-)); ?>
+							
+							<!--[if !IE]>end  tabs<![endif]-->
+							
+							<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('account/create'), array("class"=>"update")); ?>
+							</div>
+
+
+							<!--[if !IE]>start table_wrapper<![endif]-->
+							<div class="table_wrapper">
+								<div class="table_wrapper_inner">
+								<?php
+								$widget= $this->widget('application.components.widgets.ImeetingGridView', array(
+									'id' =>'company-grid',
+									'pager'=>array('cssFile'=>false,'class'=>'ImeetingLinkPager'),
+
+									'template'=>'{items} ',
+									'dataProvider'=>$model->search(),
+									'cssFile' => false,
+									'columns'=>array(
+										'id',
+										'name',
+										'room_limit',
+										'user_limit',
+										'address',
+										'description',
+										
+										'phone',
+										'email',
+										array(
+										
+										
+										'class'=>'CButtonColumn',
+										'deleteButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/delete.png',
+										'updateButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/update.png',
+										'viewButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/view.png',
+										'htmlOptions'=>array('width'=>'110px'),
+										'buttons' =>array(
+										 	'delete'=>array(
+							                        'label'=>'Delete?',
+							                        //'url'=>Yii::app()->controller->createUrl("project/makeReviewable",array("id"=>$model->id)),
+							                        'options'=>array('class'=>'cssGridButton'),
+							                        
+							                            ),
+										),
+
+									),
+								),
+								));
+
+								 ?>
+ 						<div class="pagination_wrapper">
+							<span class="pagination_top"></span>
+							<div class="pagination_middle">
+							<div class="pagination">
+								<span class="page_no"><?php $widget->renderSummary(); ?></span>
+								<?php $widget->renderPager(); ?>
+							</div>
+							</div>
+							<span class="pagination_bottom"></span>
+							</div>
+
+								</div>
+							</div>
+							<!--[if !IE]>end table_wrapper<![endif]-->
+						</div>
+
+						<span class="section_content_bottom"></span>
+					</div>
+					<!--[if !IE]>end section content<![endif]-->
+				</div>
+				<!--[if !IE]>end section<![endif]-->
+

@@ -53,8 +53,8 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 						)); ?>
 						<div class="form"> 
 						<div>
-							<div style="width:400px; float: left">
-								<label style="width: 80px"><?php echo Yii::t('conference', 'Từ ngày'); ?></label>
+							<div style="width:460px; float: left">
+								<label style="width: 80px; float:left"><?php echo Yii::t('conference', 'Từ ngày'); ?></label>
 								<?php
 								$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 								    'name'=>'from_date',  // name of post parameter
@@ -64,11 +64,11 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 								        'dateFormat'=>'dd.mm.yy',
 								    ),
 								    'htmlOptions'=>array(
-								        'style'=>'height:20px;'
+								        'style'=>'height:20px;float:left'
 								    ),
 								));
 								?>
-								<label style="width: 80px"><?php echo Yii::t('conference', 'Đến ngày');?></label>
+								<label style="width: 80px;float:left; padding-left:20px"><?php echo Yii::t('conference', 'Đến ngày');?></label>
 								<?php
 								$this->widget('zii.widgets.jui.CJuiDatePicker', array(
 								    'name'=>'to_date',
@@ -79,11 +79,11 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 								 
 								    ),
 								    'htmlOptions'=>array(
-								        'style'=>'height:20px;'
+								        'style'=>'height:20px;float:left'
 								    ),
 								));
 								?>
-						
+							
 							</div>
 
 							<div class="button">
@@ -91,13 +91,14 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 							<?php echo CHtml::submitButton( Yii::t('conference', 'Tìm kiếm')); ?>
 							
 							</div>
+
 						</div>
-						
+
 
 						<?php $this->endWidget(); ?>
 						</div>
 						<!-- end search form -->
-							<div class="table_tabs_menu">
+							<div class="table_tabs_menu" style="padding-top:10px">
 							<!--[if !IE]>start  tabs<![endif]-->
 
 							<!--[if !IE]>end  tabs<![endif]-->

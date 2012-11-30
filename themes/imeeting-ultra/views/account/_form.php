@@ -7,7 +7,7 @@ echo CHtml::beginForm('','post',array('enctype'=>'multipart/form-data','class'=>
 	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 
 	<div class="row">
-		<?php echo CHtml::activeLabelEx($model,'email', array('style'=>"width:240px")); ?>
+		<?php echo CHtml::activeLabelEx($model,'email'); ?>
 		<div class='inputs' style='float:left'>
 			<span style="float:left">
 			<?php echo CHtml::activeTextField($model,'email',array('size'=>60,'maxlength'=>128)); ?>
@@ -17,7 +17,7 @@ echo CHtml::beginForm('','post',array('enctype'=>'multipart/form-data','class'=>
 		
 	</div>
 	<div class="row">
-		<?php echo CHtml::activeLabelEx($model,'password', array('style'=>"width:240px")); ?>		
+		<?php echo CHtml::activeLabelEx($model,'password'); ?>		
 		<div class='inputs' style='float:left'>
 			<span style="float:left">
 				<?php echo CHtml::activePasswordField($model,'password',array('size'=>60,'maxlength'=>128)); ?>
@@ -26,12 +26,12 @@ echo CHtml::beginForm('','post',array('enctype'=>'multipart/form-data','class'=>
 		</div>
 		
 
-	</div>
+	</div>	
 
 
 
 	<div class="row">
-		<?php echo CHtml::activeLabelEx($model,'status', array('style'=>"width:240px")); ?>
+		<?php echo CHtml::activeLabelEx($model,'status'); ?>
 		<div class='inputs' style='float:left'>
 			<span style="float:left">
 				<?php echo CHtml::activeDropDownList($model,'status',User::itemAlias('UserStatus')); ?>
@@ -41,7 +41,7 @@ echo CHtml::beginForm('','post',array('enctype'=>'multipart/form-data','class'=>
 	</div>
 
 	<div class="row">
-		<label style="width:240px"> <?php echo Yii::t('conference','Quản lý phòng họp'); ?></label>
+		<label> <?php echo Yii::t('conference','Quản lý phòng họp'); ?></label>
 		<?php echo CHtml::CheckBox('presenter',$presenter); ?>
 
 	</div>
@@ -52,7 +52,7 @@ echo CHtml::beginForm('','post',array('enctype'=>'multipart/form-data','class'=>
 			foreach($profileFields as $field) {
 			?>
 	<div class="row">
-		<?php echo CHtml::activeLabelEx($profile,$field->varname, array('style'=>"width:240px")); ?>
+		<?php echo CHtml::activeLabelEx($profile,$field->varname); ?>
 
 		<div class='inputs' style='float:left'>
 			<span style="float:left">
@@ -76,7 +76,7 @@ echo CHtml::beginForm('','post',array('enctype'=>'multipart/form-data','class'=>
 		}
 ?>
 	<div class="row buttons">
-		<div style='float:left; width:240px'>&nbsp</div>
+		<div style='float:left; width:115px'>&nbsp</div>
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Thêm mới' : 'Lưu thay đổi'); ?>
 	</div>
 

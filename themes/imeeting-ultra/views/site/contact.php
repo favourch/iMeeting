@@ -4,7 +4,7 @@ $this->breadcrumbs=array(
 	'Contact',
 );
 ?>
-<div style="width: 950px;height: 400px;">
+<div class="demo" style="width: 950px;height: 450px; padding-bottom: 10px">
 	<div style="padding: 10px 0 0 10px">
 		
 	<h1><?php echo Yii::t('contact','Liên hệ'); ?></h1>

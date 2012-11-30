@@ -1,5 +1,5 @@
 	<div  style="width: 960px; height: 400px; padding-top: 10px; margin-top: 10px">
-	<div style="width: 400px;height: 250px;display: block;float: left;">
+	<div style="width: 400px;height: 250px;display: block;float: left;"  class="demo">
 	<h2><?php echo Yii::t('common','Dùng thử dịch vụ iMeeting');?></h2>
 	<?php
 	
@@ -25,7 +25,7 @@
 		<div style="padding-left: 30px;"><img src="images/demo-2.png" title="iMeeting demo"></div>
 		<!--<img src="images/features.jpg" title="iMeeting features" />-->
 		<br/>
-		<div style="padding-top: 10px">
+		<div style="padding-top: 10px; " class="demo">
 			<h2>iMeeting</h2>
 			<p>
 				<?php echo Yii::t('common','iMeeting là dịch vụ hội thảo trực tuyến trên nền tảng web cung cấp nhiều tính năng ưu việt');?>:

@@ -20,16 +20,9 @@ $this->breadcrumbs=array(
 	UserModule::t('Manage'),
 );
 ?>
-<?php //$this->widget('ext.imeeting-toolbars.ImeetingToolbarsWidget',array('model'=>isset($model)?$model:null, 'controller'=>'account', 'mod'=>$isMod || $isAdmin, 'index' =>FALSE)); ?>
-<h1><?php// echo UserModule::t("Manage Users"); ?></h1>
 
 <?php
-/*
- echo $this->renderPartial('_menu', array(
-		'list'=> array(
-			CHtml::link(UserModule::t('Create User'),array('create')),
-		),
-	));*/
+
 $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
 <!--[if !IE]>start section<![endif]-->

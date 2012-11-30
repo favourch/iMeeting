@@ -15,7 +15,7 @@ $this->breadcrumbs=array(
 	*/
 ?>
   <?php
-  		$this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'dashboard'));
+  	//	$this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'dashboard'));
        $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
     ?>
 	<div class="section">
@@ -87,8 +87,21 @@ $this->breadcrumbs=array(
 											'value'=>'User::itemAlias("AdminStatus",$data->superuser)',
 										),
 										array(
-											'class'=>'CButtonColumn',
+										'class'=>'CButtonColumn',
+										'deleteButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/delete.png',
+										'updateButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/update.png',
+										'viewButtonImageUrl'=>Yii::app()->request->baseUrl.'/images/view.png',
+										'htmlOptions'=>array('width'=>'110px'),
+										'buttons' =>array(
+										 	'delete'=>array(
+							                        'label'=>'Delete?',
+							                        //'url'=>Yii::app()->controller->createUrl("project/makeReviewable",array("id"=>$model->id)),
+							                        'options'=>array('class'=>'cssGridButton'),
+							                        
+							                            ),
 										),
+
+									),
 									),
 								));
 
