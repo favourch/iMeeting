@@ -312,8 +312,8 @@ class ConferenceController extends RController
 			if($id && ($model->company_id != $this->_user->company_id)){
 
 
-				throw new CHttpException(403,'Phòng hội thảo này không thuộc quyền quản lý của bạn');
-				return;
+				Yii::app()->user->setFlash('warning',Yii::t('conference','Phòng hội thảo này không thuộc quyền quản lý của bạn'));
+				$this->redirect(array("conference/admin"));
 			}
 		}
 
@@ -424,10 +424,10 @@ class ConferenceController extends RController
 		}
 		else{
 			if($model->company_id < 0){
-				$msg = "Vui lòng liên hệ người quản lý tổ chức hoặc công ty của bạn.
-						Bạn cần tham gia vào 1 tổ chức hoặc công ty để có thể sử dụng phòng họp.";
-				throw new CHttpException(403,$msg);
-				return;
+				$msg = Yii::t('conference',"Vui lòng liên hệ người quản lý tổ chức hoặc công ty của bạn.
+						Bạn cần tham gia vào 1 tổ chức hoặc công ty để có thể sử dụng phòng họp.");
+				Yii::app()->user->setFlash('warning',$msg );
+				$this->redirect(array("user/login"));
 			}
 			$criteria->compare('company_id',$model->company_id);
 		}
@@ -460,7 +460,10 @@ class ConferenceController extends RController
 			$model->attributes=$_GET['Rooms'];
 		if(!Yii::app()->getModule('user')->isAdmin()){
 			if($user->company_id < 0){
-				return;
+				$msg = Yii::t('conference',"Vui lòng liên hệ người quản lý tổ chức hoặc công ty của bạn.
+						Bạn cần tham gia vào 1 tổ chức hoặc công ty để có thể sử dụng phòng họp.");
+				Yii::app()->user->setFlash('warning',$msg );
+				$this->redirect(array("user/login"));
 			}
 			else{
 				$model->company_id = $user->company_id;

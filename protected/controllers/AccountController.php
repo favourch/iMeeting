@@ -18,15 +18,18 @@ class AccountController extends RController
 	}
 	public function createCriteria(){
 		if(Yii::app()->getModule('user')->isAdmin()){
-			throw new CHttpException(400,Yii::t('conference','Tuy cập không hợp lệ. Admin không được phép sử dụng chức năng này'));
-			return;
+			$msg = Yii::t('conference','Truy cập không hợp lệ. Admin không được phép sử dụng chức năng này');
+			Yii::app()->user->setFlash('warning',$msg );
+			this->redirect(array("user/admin"));
 		}
 		$criteria=new CDbCriteria;
 		$thisUser = User::model()->notsafe()->findbyPk(Yii::app()->user->id);
 		$this->_company_id = $thisUser->company_id;
 		if($this->_company_id < 0 ){
-			throw new CHttpException(400,Yii::t('conference','Tuy cập không hợp lệ. Tài khoản chưa thuộc nhóm nào, vui lòng liên hệ quản trị website: support@imeeting.vn'));
-			return;
+			$msg = Yii::t('conference',"Vui lòng liên hệ người quản lý tổ chức hoặc công ty của bạn.
+					Bạn cần tham gia vào 1 tổ chức hoặc công ty để có thể sử dụng phòng họp.");
+			Yii::app()->user->setFlash('error',$msg );
+			$this->redirect(array("user/login"));
 		}
 		$criteria->compare('company_id',$this->_company_id );
 		return $criteria;
@@ -216,7 +219,9 @@ class AccountController extends RController
 			if(isset($_GET['id'])){
 				$this->_model=User::model()->notsafe()->findbyPk($_GET['id']);
 				if($this->_model->company_id != $this->_company_id){
-					throw new CHttpException(404,Yii::t('Tổ chức bạn đang thao tác không thuộc thẩm quyền của bạn'));
+					$msg = Yii::t('conference','Tài khoản bạn đang thao tác không thuộc thẩm quyền của bạn');
+					Yii::app()->user->setFlash('error',$msg );
+					$this->redirect(array("account/index"));
 				}
 			}
 			if($this->_model===null)

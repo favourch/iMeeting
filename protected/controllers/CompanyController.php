@@ -31,8 +31,9 @@ class CompanyController extends RController
 		
 		if(!Yii::app()->getModule('user')->isAdmin()){
 			if($id && ($id != $user->company_id)){
-				throw new CHttpException(403,Yii::t('conference','Khu vực này không thuộc quyền quản lý của bạn'));
-				return;
+				Yii::app()->user->setFlash('error',Yii::t('conference','Khu vực này không thuộc quyền quản lý của bạn'));
+				$this->redirect(array("/user/login"));
+
 			}
 		}
 		$this->render('view',array(
@@ -144,8 +145,12 @@ class CompanyController extends RController
 	public function loadModel($id)
 	{
 		$model=Company::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,Yii::t('conference','Truy cập không hợp lệ, xin vui lòng thử lại sau'));
+		if($model===null){
+			Yii::app()->user->setFlash('error',Yii::t('conference','Truy cập không hợp lệ, xin vui lòng thử lại sau'));
+			$this->redirect(array("/company/admin"));
+
+		}
+
 		return $model;
 	}
 

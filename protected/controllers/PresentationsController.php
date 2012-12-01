@@ -25,8 +25,8 @@ class PresentationsController extends GxController {
 	}
 	public function createCriteria(){
 		if(Yii::app()->getModule('user')->isAdmin()){
-			throw new CHttpException(400,'Invalid request. Admin cannot using this controller');
-			return;
+			Yii::app()->user->setFlash('warning',Yii::t('conference','Admin không được phép sử dụng chức năng này'));
+			$this->redirect(array("/conference"));			
 		}
 		$criteria=new CDbCriteria;
 		$thisUser = User::model()->notsafe()->findbyPk(Yii::app()->user->id);
@@ -43,7 +43,8 @@ class PresentationsController extends GxController {
 
 		//$this->actionDownload($id);
 		if(!$this->checkOwner($id)){
-			throw new CHttpException(400,'you are not authorized to view this document.');
+			Yii::app()->user->setFlash('error',Yii::t('conference','Tài liệu này không thuộc tổ chức của bạn'));
+			$this->redirect(array("/presentations"));	
 			//Yii::app()->clientScript->registerScript('uniqueid', 'alert("ok");');
 			//$this->redirect(Yii::app()->user->returnUrl);
 		};
@@ -56,9 +57,9 @@ class PresentationsController extends GxController {
 	}
 	public function actionThumb($id){
 		if(!$this->checkOwner($id)){
-			throw new CHttpException(400,'you are not authorized to view this document.');
-			//Yii::app()->clientScript->registerScript('uniqueid', 'alert("ok");');
-			//$this->redirect(Yii::app()->user->returnUrl);
+			Yii::app()->user->setFlash('error',Yii::t('conference','Tài liệu này không thuộc tổ chức của bạn'));
+			$this->redirect(array("/presentations"));	
+
 		};
 		$presentation = Presentations::model()->findByPk($id);
 		//$room_dir = RoomDirectory::model()->findByPk($presentation->room_sha1);
@@ -105,8 +106,8 @@ class PresentationsController extends GxController {
     }
 	public function actionUpdate($id) {
 		if(!$this->checkOwner($id) || !$this->checkMod()){
-			throw new CHttpException(400,'you are not authorized to edit this document.');
-
+			Yii::app()->user->setFlash('error',Yii::t('conference','Tài liệu này không thuộc tổ chức của bạn'));
+			$this->redirect(array("/presentations"));	
 		};
 
 		$model = $this->loadModel($id, 'Presentations');
@@ -129,7 +130,8 @@ class PresentationsController extends GxController {
 	public function actionDelete($id) {
 
 		if(!$this->checkOwner($id) || !$this->checkMod()){
-			throw new CHttpException(400,'you are not authorized to delete this document.');
+			Yii::app()->user->setFlash('error',Yii::t('conference','Tài liệu này không thuộc tổ chức của bạn'));
+			$this->redirect(array("/presentations"));	
 
 		};
 		$presentation = Presentations::model()->findByPk($id);
@@ -152,7 +154,9 @@ class PresentationsController extends GxController {
 
 	public function actionAdmin() {
 		if(!$this->checkMod()){
-			throw new CHttpException(400,'you are not authorized to manage documents.');
+			Yii::app()->user->setFlash('warning',Yii::t('conference','Bạn không được phép sử dụng chức năng này!'));
+			$this->redirect(array("/presentations"));	
+
 
 		};
 		//ProcessPresentationsController::actionIndex();
@@ -200,12 +204,10 @@ class PresentationsController extends GxController {
 	public function actionDownload($id){
 
 		if(!$this->checkOwner($id)){
-			throw new CHttpException(400,'you are not authorized to view this document.');
-			//Yii::app()->clientScript->registerScript('uniqueid', 'alert("ok");');
-			//$this->redirect(Yii::app()->user->returnUrl);
+			Yii::app()->user->setFlash('error',Yii::t('conference','Tài liệu này không thuộc tổ chức của bạn'));
+			$this->redirect(array("/presentations"));	
 		};
 		$presentation = Presentations::model()->findByPk($id);
-		//$room_dir = RoomDirectory::model()->findByPk($presentation->room_sha1);
 
 		$dir = $this->_dir."/".$presentation->room_sha1."/".$presentation->path."/".$presentation->filename;
 
