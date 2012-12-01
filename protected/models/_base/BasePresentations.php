@@ -64,7 +64,7 @@ abstract class BasePresentations extends GxActiveRecord {
 		return array(
 			'id' => Yii::t('app', 'ID'),
 			'room_sha1' => 'Room hash',
-			'name'=> Yii::t('app', 'File name'),
+			'name'=> Yii::t('app', 'Tên tập tin'),
 			'path' => Yii::t('app', 'Path'),
 			'filename' => Yii::t('app', 'Filename'),
 			'meeting_time' => Yii::t('app', 'Meeting Time'),

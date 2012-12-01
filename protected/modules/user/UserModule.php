@@ -91,6 +91,7 @@ class UserModule extends CWebModule
 	
 	static private $_user;
 	static private $_admin;
+	static private $_mod;
 	static private $_admins;
 	
 	/**
@@ -183,7 +184,26 @@ class UserModule extends CWebModule
 			return self::$_admin;
 		}
 	}
+	/**
+	 * Return moderator status.
+	 * @return boolean
+	 */
+	public static function isMod() {
+		self::$_mod = false;
+		if(Yii::app()->user->isGuest){
+			return false;
+		}else{
+			
+			$rights = Rights::getAssignedRoles(Yii::app()->user->id);
+			foreach($rights as $r){
+				if($r->name =='Moderator'){
+					self::$_mod = true;
+				}
 
+			}
+		}
+		return self::$_mod;
+	}
 	/**
 	 * Return admins.
 	 * @return array syperusers names
