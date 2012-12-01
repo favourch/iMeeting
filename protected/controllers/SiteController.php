@@ -86,6 +86,40 @@ class SiteController extends Controller
 		}
 		$this->render('contact',array('model'=>$model));
 	}
+
+	/**
+	 * Displays the helpus page
+	 */
+	public function actionHelpus()
+	{
+		$model=new ContactForm;
+		if(Yii::app()->user->id)
+			$user=User::model()->findByPk(Yii::app()->user->id);
+		if($user===null)
+			$this->redirect(Yii::app()->controller->module->loginUrl);
+		
+		$model->email = $user->email;
+		$model->name = $user->username;
+		if(isset($_POST['ContactForm']))
+		{
+			$model->attributes=$_POST['ContactForm'];
+			if($model->validate())
+			{
+				$mail = array (
+					'toEmail' => Yii::app()->params['adminEmail'],
+					'toName' => Yii::app()->params['adminName'],
+					'fromEmail' => $model->email,
+					'fromName' => $model->name,
+					'subject' => $model->subject,
+					'body' => $model->body,
+					);
+				$this->sendEmail($mail);
+				Yii::app()->user->setFlash('contact','Cám ơn bạn rất nhiều, chúng tôi sẽ phản hồi trong thời gian sớm nhất.');
+				$this->refresh();
+			}
+		}
+		$this->render('helpus',array('model'=>$model));
+	}
  protected function sendEmail($mail=array()){
         
         if(empty($mail)) return false;

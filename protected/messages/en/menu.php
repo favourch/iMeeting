@@ -31,5 +31,6 @@ return array(
 	'Quản lý công ty' => 'Companies',
 	'Quản lý quyền'=> 'Rights',
 	'Tài liệu'=> 'Documents',
+	'Phòng hội thảo' => 'Conference',
 	
 );

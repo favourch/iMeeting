@@ -807,6 +807,9 @@ h3 {
 .d16 {
 	background-image:url(layout/dashboard_icons/d16.gif);
 }
+.d17 {
+	background-image:url(layout/dashboard_icons/d17.gif);
+}
 
 .section_menu {
 	margin: 0;
@@ -2627,6 +2630,24 @@ h5 {
 
 /* end footer */
 
+p.home{
+	padding-left: 70px; 
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Arial,Helvetica,sans-serif;
+}
+.border {
+	border:solid 1px #FFFFFF;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-border-radius: 18px;
+	-webkit-border-radius: 18px;
+	border-radius: 18px;
+	
+	
+}
 /* box */
 .box {
 	width: 300px;
@@ -2650,9 +2671,67 @@ h5 {
 	-moz-border-radius: 18px;
 	-webkit-border-radius: 18px;
 	border-radius: 18px;
+}	
+div.form_wrapper{
+	padding-left: 200px;
+}
 	
-
-	
+	.thumbnail {
+	clear: none !important;
+	float: left !important;
+	left: auto !important;
+	margin: 0px 15px 15px 5px !important;
+	position: static !important;
+	top: auto !important;
+}
+.title {
+	color: #FFFFFF;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: Arial,Helvetica,sans-serif;
 }
 
 
+/* form home */
+div.form {
+	padding-left: 20px; 
+	
+	
+	font-size: large;
+}
+div.form .rememberMe label
+{
+	display: inline;
+}
+div.form .button{
+	 
+	color: #4165b1;
+}
+div.demo {
+	font-family: Arial,Helvetica,sans-serif;
+	color: #FFFFFF;
+}
+/* suppport */
+img.phone
+{
+	width:46px;
+	height:44px;
+	background:url(images/icons.png) 0 0;
+}
+div.gradient {
+	background:-webkit-gradient(linear, 0% 4%, 0% 100%, from(#c0cce6), to(#6280c0));
+	color: #0631a2;
+	font-weight: bold;
+	padding-bottom: 10px;
+	font-family: Arial,Helvetica,sans-serif;
+	color: #FFFFFF;
+}
+div.gradient p {
+	padding-top: 15px;
+	height: 18px;
+} 
+div.gradient p a{
+	color: #0631a2;
+	text-decoration: none;
+	line-height: 18px;
+}

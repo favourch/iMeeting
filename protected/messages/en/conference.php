@@ -6,6 +6,8 @@ return array(
 	'Tên của bạn' => 'Your name',
 	'Lưu thay đổi' => 'Save changes',
 	'Quản lý phòng họp' => 'Room\'s moderator',
+	'Phòng hội thảo' => 'Conference',
+	'Bảng điều khiển' => 'Dashboard',
 	/* toolbar*/
 	'Danh sách phòng' => 'Please choose room:',
 	'Chọn phòng họp' => 'Select room',

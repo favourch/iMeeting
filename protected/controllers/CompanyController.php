@@ -114,10 +114,11 @@ class CompanyController extends RController
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Company');
+		$this->actionAdmin();
+	/*	$dataProvider=new CActiveDataProvider('Company');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
+		));*/
 	}
 
 	/**
