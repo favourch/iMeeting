@@ -50,7 +50,12 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 							<div class="title_wrapper_content">
 								<h2><?php echo $section_name;?></h2>
 								
-								<?php echo CHtml::link(Yii::t('conference','Quản lý phòng họp'),array('/conference/admin'),array('class'=>'view_all_orders')); ?>
+								<?php if(UserModule::isMod() || UserModule::isAdmin()): ?>	
+									<?php echo CHtml::link(Yii::t('conference','Quản lý phòng họp'),array('/conference/admin'),array('class'=>'view_all_orders')); ?>
+								<?php else: ?>
+									<?php echo CHtml::link(Yii::t('conference','Chọn phòng họp'),array('/conference'),array('class'=>'view_all_orders')); ?>
+									 
+								<?php endif; ?>
 							</div>
 						</div>
 						<span class="title_wrapper_bottom"></span>
@@ -63,10 +68,10 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 						<div class="section_content_inner">
 							<div class="table_tabs_menu">
 							<!--[if !IE]>start  tabs<![endif]-->
-
+							<?php if(UserModule::isMod() || UserModule::isAdmin()): ?>
+								<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
+							<?php endif; ?>
 							<!--[if !IE]>end  tabs<![endif]-->
-
-							<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
 							</div>
 								<div class="table_wrapper">
 									<div class="table_wrapper_inner">

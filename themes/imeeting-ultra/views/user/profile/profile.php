@@ -41,8 +41,9 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 							<!--[if !IE]>start  tabs<![endif]-->
 
 							<!--[if !IE]>end  tabs<![endif]-->
-
-							<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
+							<?php if(UserModule::isMod()): ?>
+							<?php echo CHtml::link('<span><span><em>'. Yii::t('menu','Thêm mới').'</em><strong></strong></span></span>',array('admin/create'), array("class"=>"update")); ?>
+							<?php endif; ?>
 							</div>
 								<div class="table_wrapper">
 									<div class="table_wrapper_inner">

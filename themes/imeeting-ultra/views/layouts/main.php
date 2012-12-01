@@ -20,10 +20,11 @@
 	
 	
 	<link media="screen" rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/imeeting-ultra/admin.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+	
 	<!--[if lte IE 6]><link media="screen" rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin-ie.css" /><![endif]-->
 	
-	<!--<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin-ie.css" />-->
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/imeeting-ultra/form.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/imeeting-ultra/form_wrapper.css" />
 	<script type="text/javascript" src="js/behaviour.js"></script>
 	
 	<!-- Start Uniform JS -->

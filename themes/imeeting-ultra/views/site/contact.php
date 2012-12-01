@@ -38,29 +38,36 @@ $this->breadcrumbs=array(
 			<div class="row">
 				
 				<label style="width:150px"><?php echo Yii::t('contact','Tên của bạn');?></label>
-				<?php echo $form->textField($model,'name',array('size'=>40,'maxlength'=>128)); ?>
-				<?php echo $form->error($model,'name'); ?>
+				<div>
+					<?php echo $form->textField($model,'name',array('size'=>40,'maxlength'=>128)); ?>
+					<?php echo $form->error($model,'name'); ?>
+				</div>
+				
 			</div>
 		
 			<div class="row">
 				
 				<label style="width:150px"><?php echo Yii::t('contact','Email');?></label>
+				<div>
 				<?php echo $form->textField($model,'email',array('size'=>40,'maxlength'=>128)); ?>
 				<?php echo $form->error($model,'email'); ?>
+				</div>
 			</div>
 		
 			<div class="row">
 				<label style="width:150px"><?php echo Yii::t('contact','Tiêu đề');?></label>
-				
+				<div>
 				<?php echo $form->textField($model,'subject',array('size'=>40,'maxlength'=>128)); ?>
 				<?php echo $form->error($model,'subject'); ?>
+				</div>
 			</div>
 		
 			<div class="row">
 				<label style="width:150px"><?php echo Yii::t('contact','Nội dung');?></label>
-				
+				<div>
 				<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>42)); ?>
 				<?php echo $form->error($model,'body'); ?>
+				</div>
 			</div>
 		
 			<?php if(CCaptcha::checkRequirements()): ?>
