@@ -10,7 +10,7 @@ return array(
 	'Logout' => 'Thoát',
 	'username' => 'Tên đăng nhập',
 	'username or email' => 'Tên đăng nhập',
-	'password' => 'Mật khẩu',
+	'Password' => 'Mật khẩu',
 	'Remember me next time' => 'Ghi nhớ',
 	'Username is incorrect.' => 'Tên đăng nhập hoặc mật khẩu không chính xác',
 	'Email is incorrect.' => 'Tên đăng nhập hoặc mật khẩu không chính xác',

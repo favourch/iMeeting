@@ -34,7 +34,7 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 						<div class="title_wrapper_inner">
 							<span class="title_wrapper_middle"></span>
 							<div class="title_wrapper_content">
-								<h2><?php echo Yii::t("conference","Quản lý tài khoản");?></h2>
+								<h2><?php echo Yii::t("menu","Quản lý tài khoản");?></h2>
 								
 							</div>
 						</div>

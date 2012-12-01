@@ -42,7 +42,9 @@ $section_name = Yii::t('conference','Tạo tài khoản');
 							<span class="title_wrapper_middle"></span>
 							<div class="title_wrapper_content">
 								<h2><?php echo $section_name;?></h2>
-								<?php echo CHtml::link(Yii::t('conference','Quản lý tài khoản'),array('/conference/admin'),array('class'=>'view_all_orders')); ?>
+								<?php if(UserModule::isMod()): ?>
+								<?php echo CHtml::link(Yii::t('conference','Quản lý tài khoản'),array('/account/index'),array('class'=>'view_all_orders')); ?>
+							<?php endif; ?>
 							</div>
 						</div>
 						<span class="title_wrapper_bottom"></span>

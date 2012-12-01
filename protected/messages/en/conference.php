@@ -8,6 +8,7 @@ return array(
 	'Quản lý phòng họp' => 'Room\'s moderator',
 	'Phòng hội thảo' => 'Conference',
 	'Bảng điều khiển' => 'Dashboard',
+	'Góp ý' => 'Message',
 	/* toolbar*/
 	'Danh sách phòng' => 'Please choose room:',
 	'Chọn phòng họp' => 'Select room',

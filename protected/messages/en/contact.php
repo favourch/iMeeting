@@ -7,7 +7,7 @@ return array(
 	'Nội dung' => 'Content',
 	'Mã bảo vệ' => 'Security code',
 	'Gởi thông tin' => 'Contact now',
-	'Nếu bạn có bất kỳ câu hỏi nào về chúng tôi, hay sản phẩm & dịch vụ, vui lòng liên hệ chúng tôi. Cám ơn.'
+	'Nếu bạn có bất kỳ câu hỏi nào về chúng tôi, hay sản phẩm & dịch vụ, vui lòng liên hệ chúng tôi. Xin chân thành cám ơn.'
 		=> 'If you have any question about our service & products, please contact us now. Thank you so much.',
 	'Liên hệ' => 'Contact us',
 	'Công  ty TNHH Đầu tư Công nghệ Trường Giang'=> 'Truong Giang Technology Investment Company Limited',

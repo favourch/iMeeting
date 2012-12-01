@@ -39,7 +39,7 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 							<!--[if !IE]>end  tabs<![endif]-->
 							</div>
 							<p>
-								<?php echo Yii::t('contact','Nếu bạn có bất kỳ câu hỏi nào về chúng tôi, hay sản phẩm & dịch vụ, vui lòng liên hệ chúng tôi. Cám ơn.'); ?> 
+								<?php echo Yii::t('contact','Nếu bạn có bất kỳ câu hỏi nào về chúng tôi, hay sản phẩm & dịch vụ, vui lòng liên hệ chúng tôi. Xin chân thành cám ơn.'); ?> 
 							</p>
 							<div class="form" style="float:left; width:50%">
 									

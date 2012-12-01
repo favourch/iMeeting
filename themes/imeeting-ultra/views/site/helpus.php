@@ -5,7 +5,7 @@ $this->breadcrumbs=array(
 );
 
 $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
-$section_name = Yii::t('contact','Góp ý'); 
+$section_name = Yii::t('menu','Góp ý'); 
 ?>
 	<!--[if !IE]>start section <![endif]-->
 	<div class="section">
@@ -96,7 +96,37 @@ $section_name = Yii::t('contact','Góp ý');
 											</div>
 										</div>
 									
-									
+										<?php if(CCaptcha::checkRequirements()): ?>
+										<div class="row">
+											<label style="width:150px"><?php echo Yii::t('contact','Mã bảo vệ');?></label>
+											
+											
+											<?php $this->widget('CCaptcha',
+											  array('showRefreshButton'=>true,
+							                                    'buttonType'=>'button',
+							                                    'buttonOptions'=>
+							                                                        array('type'=>'image',
+							                                                              'src'=>"/images/refresh-icon.png",
+							                                                              'width'=>40,
+							                                                              'style'=>'background:none',
+							                                                        ),                                                            
+							                                    'buttonLabel'=>Yii::t('menu','Lấy mã mới')),
+							                              false);  ?>
+											
+											
+											<div class='inputs' style='float:left'>
+											<span style="float:left">
+											<?php echo $form->textField($model,'verifyCode',array('style'=>'margin-left:150px')); ?>
+											</span>
+											<?php echo $form->error($model,'verifyCode'); ?>
+										</div>
+											<!--
+											<div class="hint">Vui lòng nhập các ký tự từ hình ảnh. <br/>Các ký tự không phân biệt HOA-thường.
+											</div>
+											-->
+											
+										</div>
+										<?php endif; ?>
 										<div class="row buttons">
 											<div style='float:left; width:150px'>&nbsp</div>
 											<?php echo CHtml::submitButton(Yii::t('contact','Gởi thông tin'), array('class'=>'button')); ?>

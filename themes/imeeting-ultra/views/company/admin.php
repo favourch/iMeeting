@@ -82,7 +82,7 @@ hoặc <b>=</b>) để tìm kiếm chính xác hơn.
 							
 							<!--[if !IE]>end  tabs<![endif]-->
 							
-							<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('account/create'), array("class"=>"update")); ?>
+							<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('company/create'), array("class"=>"update")); ?>
 							</div>
 
 

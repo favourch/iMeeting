@@ -18,19 +18,19 @@
 	}
 </style>
 	<div style="padding-left:20px" >
-		<div style="float: left; width: 400px; padding-top: 35px; padding-left: 20px">
+		<div style="float: left; width: 400px; padding-top: 15px; padding-left: 20px">
 			<div class="row" style="height: 80px">
-				<img class="thumbnail" src="images/support_phone.jpg" title="Phone"/>
+				<img width=100 height=80 class="thumbnail" src="images/phone.png" title="Phone"/>
 				<p class="title" style="padding-top: 15px"><?php echo Yii::t('menu','08 - 2229 7648'); ?>
 				<br><?php echo Yii::t('common','Kinh doanh'); ?>: 0988.369.516
 				<br><?php echo Yii::t('common','Kỹ thuật'); ?>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 0908.990.855</p>
 			</div>
 			<div class="row" style="height: 80px">
-				<img class="thumbnail" src="images/support_email.jpg" title="Email"/>
+				<img  width=100 height=80 class="thumbnail" src="images/email.png" title="Email"/>
 				<p class="title" style="padding-top: 15px">sales@imeeting.vn</p>
 			</div>
 			<div class="row" style="height: 80px">
-				<img class="thumbnail" src="images/support_online.jpg" title="Online support"/>
+				<img  width=100 height=80 class="thumbnail" src="images/chat.png" title="Online support"/>
 
 				<p class="title" style="padding-top: 15px"><?php echo Yii::t('common','Hỗ trợ trực tuyến'); ?>
 
@@ -51,7 +51,7 @@ http://www.skype.com/go/skypebuttons
 
 		</div>
 
-		<div style="float: left; width: 500px; padding-top: 15px">
+		<div style="float: left; width: 500px; padding-top: 50px">
 
 			<img src="images/support.png" />
 		</div>

@@ -32,7 +32,7 @@ $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
 		
 		<div class="row">
 			<?php //echo CHtml::activeLabelEx($model,UserModule::t('password'),array('style'=>"width:100px")); ?>
-			<label for="UserLogin_email" style="width: 100px"><?php echo UserModule::t('password'); ?></label>
+			<label for="UserLogin_email" style="width: 100px"><?php echo UserModule::t('Password'); ?></label>
 			<?php echo CHtml::activePasswordField($model,'password',array('style'=>"width:150px")) ?>
 		</div>
 		<!--

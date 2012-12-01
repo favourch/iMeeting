@@ -7,6 +7,8 @@ return array(
 	'Hỗ trợ' => 'Support',
 	'Quản lý phòng họp' => 'Rooms',
 	'Quản lý tài khoản' => 'Users',
+	'Phòng hội thảo' => 'Conference',
+	'Bảng điều khiển' => 'Dashboard',
 	'Tổ chức kinh doanh'=>'Business',
 	'Tổ chức đào tạo'=>'Traning',
 	'Cá nhân'=> 'Individuals',
@@ -32,5 +34,11 @@ return array(
 	'Quản lý quyền'=> 'Rights',
 	'Tài liệu'=> 'Documents',
 	'Phòng hội thảo' => 'Conference',
-	
+	'Chọn phòng họp' => 'Join conference',
+	'Tài khoản' => 'Profile',
+	'Quản lý tài khoản' => 'Users',
+	'Quản lý tài liệu' => 'Documents',
+	'Góp ý'=>'Message',
+	'Thêm mới' => 'Add',
+	'Danh sách phòng họp' =>'Meeting rooms',
 );

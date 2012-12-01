@@ -20,7 +20,7 @@ if($isMod){
 }
 */
 
-$section_name = Yii::t('conference','Danh sách phòng họp');
+$section_name = Yii::t('menu','Danh sách phòng họp');
 $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'quickshortcut'));
 ?>
 
@@ -37,9 +37,9 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 								<h2><?php echo $section_name;?></h2>
 								
 								<?php if(UserModule::isMod() || UserModule::isAdmin()): ?>	
-									<?php echo CHtml::link(Yii::t('conference','Quản lý phòng họp'),array('/conference/admin'),array('class'=>'view_all_orders')); ?>
+									<?php echo CHtml::link(Yii::t('menu','Quản lý phòng họp'),array('/conference/admin'),array('class'=>'view_all_orders')); ?>
 								<?php else: ?>
-									<?php echo CHtml::link(Yii::t('conference','Chọn phòng họp'),array('/conference'),array('class'=>'view_all_orders')); ?>
+									<?php echo CHtml::link(Yii::t('menu','Chọn phòng họp'),array('/conference'),array('class'=>'view_all_orders')); ?>
 									 
 								<?php endif; ?>
 							</div>
@@ -55,7 +55,7 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 							<div class="table_tabs_menu">
 							<!--[if !IE]>start  tabs<![endif]-->
 							<?php if(UserModule::isMod() || UserModule::isAdmin()): ?>
-								<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
+								<?php echo CHtml::link('<span><span><em>'. Yii::t('menu','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
 							<?php endif; ?>
 							<!--[if !IE]>end  tabs<![endif]-->
 

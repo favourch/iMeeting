@@ -59,7 +59,7 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 										<?php echo CHtml::errorSummary($model); ?>
 										
 										<div class="row">
-										<?php echo $form->labelEx($model,'password'); ?>
+										<?php echo $form->labelEx($model,'Password'); ?>
 										<?php echo $form->passwordField($model,'password'); ?>
 										<?php echo $form->error($model,'password'); ?>
 										<p class="hint">
