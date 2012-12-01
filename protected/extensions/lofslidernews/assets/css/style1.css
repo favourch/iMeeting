@@ -33,12 +33,14 @@ ul.sliders-wrap-inner li img{	padding:0px;	}
 .lof-slidecontent .slider-description a.readmore{color:#58B1EA; font-size:95%; }
 .lof-slidecontent .slider-description a{ color:#FFF; }
 .lof-slidecontent .slider-description{
+
 	z-index:100px;
 	position:absolute;
 	top:20px;
 	left:20px;
 	width:350px;
 	/*background:url(../images/bg_trans.png);*/
+	font-family: Arial,Helvetica,sans-serif;	
 	height:100px;
 	padding:10px;
 	color:#FFF;
@@ -47,6 +49,7 @@ ul.sliders-wrap-inner li img{	padding:0px;	}
 	font-size: 1.8em;
 	margin: 10px 0;
 	padding: 0;
+	font-family: Arial,Helvetica,sans-serif;
 	/*font-weight: bold;*/
 
 }

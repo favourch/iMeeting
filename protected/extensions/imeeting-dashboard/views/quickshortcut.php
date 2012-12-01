@@ -48,19 +48,19 @@
 							<!--[if !IE]>start dashboard menu<![endif]-->
 								<div class="dashboard_menu_wrapper">
 								<ul class="dashboard_menu">
-									<li><?php echo CHtml::link("<span>".Yii::t('conference','Chọn phòng họp') ."</span>",array("/conference/index"),array('class'=>"d4")); ?></li>
+									<li><?php echo CHtml::link("<span>".Yii::t('menu','Chọn phòng họp') ."</span>",array("/conference/index"),array('class'=>"d4")); ?></li>
 									
-									<li><?php echo CHtml::link("<span>".Yii::t('conference','Tài khoản') ."</span>",array("/user/profile"),array('class'=>"d17")); ?></li>
+									<li><?php echo CHtml::link("<span>".Yii::t('menu','Tài khoản') ."</span>",array("/user/profile"),array('class'=>"d17")); ?></li>
 									<?php if($isMod): ?>
-										<li><?php echo CHtml::link("<span>".Yii::t('conference','Quản lý tài khoản') ."</span>",array("/account/index"),array('class'=>"d1")); ?></li>
-										<li><?php echo CHtml::link("<span>".Yii::t('conference','Quản lý tài liệu') ."</span>",array("/presentations/index"),array('class'=>"d2")); ?></li>
+										<li><?php echo CHtml::link("<span>".Yii::t('menu','Quản lý tài khoản') ."</span>",array("/account/index"),array('class'=>"d1")); ?></li>
+										<li><?php echo CHtml::link("<span>".Yii::t('menu','Quản lý tài liệu') ."</span>",array("/presentations/index"),array('class'=>"d2")); ?></li>
 									<?php  endif; ?>
 									<?php if($isAdmin): ?>
-										<li><?php echo CHtml::link("<span>".Yii::t('conference','Quản lý tài khoản') ."</span>",array("/user/admin/admin"),array('class'=>"d1")); ?></li>
-										<li><?php echo CHtml::link("<span>".Yii::t('conference','Quản lý quyền') ."</span>",array("/rights"),array('class'=>"d10")); ?></li>
-										<li><?php echo CHtml::link("<span>".Yii::t('conference','Quản lý công ty') ."</span>",array("/company"),array('class'=>"d9")); ?></li>
+										<li><?php echo CHtml::link("<span>".Yii::t('menu','Quản lý tài khoản') ."</span>",array("/user/admin/admin"),array('class'=>"d1")); ?></li>
+										<li><?php echo CHtml::link("<span>".Yii::t('menu','Quản lý quyền') ."</span>",array("/rights"),array('class'=>"d10")); ?></li>
+										<li><?php echo CHtml::link("<span>".Yii::t('menu','Quản lý công ty') ."</span>",array("/company"),array('class'=>"d9")); ?></li>
 									<?php  endif; ?>
-									<li><?php echo CHtml::link("<span>".Yii::t('conference','Góp ý') ."</span>",array("/site/helpus"),array('class'=>"d6")); ?></li>
+									<li><?php echo CHtml::link("<span>".Yii::t('menu','Góp ý') ."</span>",array("/site/helpus"),array('class'=>"d6")); ?></li>
 							<!--
 									<li><a href="#" class="d7"><span>Homepage and Static Pages</span></a></li>
 									<li><a href="#" class="d2"><span>Setup upload folders</span></a></li>
