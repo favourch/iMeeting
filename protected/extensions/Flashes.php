@@ -27,14 +27,18 @@ class Flashes extends CWidget {
 					
 		Yii::app()->clientScript->registerScript(
 		   'myHideEffect',
-		   '$(".flashes").animate({opacity: 0.9}, 3500).fadeOut("slow");',
+		   '$(".flashes").animate({opacity: 0.9}, 4500).fadeOut("slow");',
 		   CClientScript::POS_READY
 		);
-			echo '<div class="flashes" style="text-align:center; padding:5px 20px 0px 20px">';
+			echo '<div class="flashes inner">
+					<div class="section">
+						<ul class="system_messages">
+			';
 			foreach($flashMessages as $key => $message) {
-				echo '<div class="flash-' . $key . ' shadow">' . $message . "</div>\n";
+				//echo '<div class="flash-' . $key . ' shadow">' . $message . "</div>\n";
+				echo '<li class="flash-' . $key . '"><span class="ico"></span><strong class="system_title">' . $message . '</strong><a href="#" class="close">CLOSE</a></li>\n';
 			}
-			echo '</div>';
+			echo '</ul></div></div>';
 		}	
     }
 }

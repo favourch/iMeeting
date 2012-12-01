@@ -15,7 +15,9 @@ body {
 	color: #3c3f42;
 }
 
-
+.color_white {
+	color: #FFFFFF;
+}
 #header
 {
 	margin: 0;
@@ -1453,38 +1455,38 @@ h3 {
 
 
 
-.blue_button {
+.flash-notice_button {
 	background-image:url(layout/submit_middle_blue.gif);
 	color: #374050;
 }
 
-.blue_button:hover {
+.flash-notice_button:hover {
 	color: #1d2635;
 }
 
-.blue_button span {
+.flash-notice_button span {
 	background-image:url(layout/submit_left_blue.gif);
 }
 
-.blue_button span span {
+.flash-notice_button span span {
 	background-image:url(layout/submit_right_blue.gif);
 }
 
 
-.green_button {
+.flash-success_button {
 	background-image:url(layout/submit_middle_green.gif);
 	color: #4d5037;
 }
 
-.green_button:hover {
+.flash-success_button:hover {
 	color: #282a1b;
 }
 
-.green_button span {
+.flash-success_button span {
 	background-image:url(layout/submit_left_green.gif);
 }
 
-.green_button span span {
+.flash-success_button span span {
 	background-image:url(layout/submit_right_green.gif);
 }
 
@@ -2039,7 +2041,7 @@ h5 {
 	color: #404a3e !important;
 }
 
-.white {
+.flash-info {
 	background: #fefefe url(layout/white_message.gif) repeat-x;
 	border: 1px solid #dbdbdb;
 	
@@ -2062,109 +2064,109 @@ h5 {
 }
 
 
-.white .close:link,
-.white .close:visited,
-.white .close:active {
+.flash-info .close:link,
+.flash-info .close:visited,
+.flash-info .close:active {
 	background-image:url(layout/close_white.gif);
 	color: #4f4f4f;
 }
 
 
-.white .system_title {
+.flash-info .system_title {
 	color: #4f4f4f;
 }
 
-.white .ico {
+.flash-info .ico {
 	background-image:url(layout/white_ico.png);
 }
 
-.red {
+.flash-error {
 	background: #e2c5c5 url(layout/red_message.gif) repeat-x;
 	border: 1px solid #cf9e9e;
 	
 }
 
-.red .close:link,
-.red .close:visited,
-.red .close:active {
+.flash-error .close:link,
+.flash-error .close:visited,
+.flash-error .close:active {
 	background-image:url(layout/close_red.gif);
 	color: #AE2727;
 }
 
-.red .system_title {
+.flash-error .system_title {
 	color: #ae2727;
 }
 
-.red .ico {
+.flash-error .ico {
 	background-image:url(layout/red_ico.png);
 }
 
 
 
-.blue {
+.flash-notice {
 	background: #c4dde3 url(layout/blue_message.gif) repeat-x;
 	border: 1px solid #9cc6d0;
 	
 }
 
-.blue .close:link,
-.blue .close:visited,
-.blue .close:active {
+.flash-notice .close:link,
+.flash-notice .close:visited,
+.flash-notice .close:active {
 	background-image:url(layout/close_blue.gif);
 	color: #0f4b74;
 }
 
 
-.blue .system_title {
+.flash-notice .system_title {
 	color: #0f4b74;
 }
 
-.blue .ico {
+.flash-notice .ico {
 	background-image:url(layout/blue_ico.png);
 }
 
-.green {
+.flash-success {
 	background: #c7e5c2 url(layout/green_message.gif) repeat-x;
 	border: 1px solid #a2d399;
 	
 }
 
-.green .close:link,
-.green .close:visited,
-.green .close:active {
+.flash-success .close:link,
+.flash-success .close:visited,
+.flash-success .close:active {
 	background-image:url(layout/close_green.gif);
 	color: #799574;
 }
 
 
 
-.green .system_title {
+.flash-success .system_title {
 	color: #386d19;
 }
 
-.green .ico {
+.flash-success .ico {
 	background-image:url(layout/green_ico.png);
 }
 
 
-.yellow {
+.flash-warning {
 	background: #eae1b1 url(layout/yellow_message.gif) repeat-x;
 	border: 1px solid #e0d182;
 	
 }
 
-.yellow .close:link,
-.yellow .close:visited,
-.yellow .close:active {
+.flash-warning .close:link,
+.flash-warning .close:visited,
+.flash-warning .close:active {
 	background-image:url(layout/close_yellow.gif);
 	color: #675918;
 }
 
-.yellow .system_title {
+.flash-warning .system_title {
 	color: #675918;
 }
 
-.yellow .ico {
+.flash-warning .ico {
 	background-image:url(layout/yellow_ico.png);
 }
 
@@ -2558,6 +2560,7 @@ h5 {
 	
 	padding: 10px 10px 25px 10px;
 /*	margin: 15px 20px 10px 20px;*/
+	margin-top: 20px;
 	font-size: 0.8em;
 	text-align: left;
 	color: #FFFFFF;
