@@ -86,7 +86,7 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 										),
 										array(
 											'type'		=>'html',
-											'value'=>'CHtml::link(\'<img src="/images/play.png" title="Join Conference" width="100px" height="100px"/>\',array(\'/confernce/join\',\'room\'=>$data->id))',
+											'value'=>'CHtml::link(\'<img src="/images/play.png" title="Join Conference" width="100px" height="100px"/>\',array(\'/conference/join\',\'room\'=>$data->id))',
 											'htmlOptions'=>array('style'=>'text-align:center'),
 											)
 									)

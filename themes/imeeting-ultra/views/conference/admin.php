@@ -104,8 +104,8 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 						<div class="title_wrapper_inner">
 							<span class="title_wrapper_middle"></span>
 							<div class="title_wrapper_content">
-								<h2><?php echo Yii::t("conference","Quản lý các phòng họp");?></h2>
-								<?php echo CHtml::link(Yii::t('conference','Chọn phòng họp'),array('/conference/index'),array('class'=>'view_all_orders')); ?>
+								<h2><?php echo Yii::t("menu","Quản lý phòng họp");?></h2>
+								<?php echo CHtml::link(Yii::t('menu','Chọn phòng họp'),array('/conference/index'),array('class'=>'view_all_orders')); ?>
 							</div>
 						</div>
 						<span class="title_wrapper_bottom"></span>
@@ -121,7 +121,7 @@ $this->widget('ext.imeeting-dashboard.ImeetingDashboardWidget',array('type'=>'qu
 
 							<!--[if !IE]>end  tabs<![endif]-->
 
-							<?php echo CHtml::link('<span><span><em>'. Yii::t('conference','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
+							<?php echo CHtml::link('<span><span><em>'. Yii::t('menu','Thêm mới').'</em><strong></strong></span></span>',array('conference/create'), array("class"=>"update")); ?>
 							</div>
 							<!--[if !IE]>start table_wrapper<![endif]-->
 							<div class="table_wrapper">

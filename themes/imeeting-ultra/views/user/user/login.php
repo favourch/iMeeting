@@ -26,13 +26,13 @@ $this->pageTitle=Yii::app()->name . ' - '.UserModule::t("Login");
 		
 		<div class="row" style="padding-top:4px">
 			<?php //echo CHtml::activeLabelEx($model,'email',array('style'=>"width:100px")); ?>
-			<label for="UserLogin_email" style="width: 100px">Email</label>
+			<label class="color_white" for="UserLogin_email" style="width: 100px">Email</label>
 			<?php echo CHtml::activeTextField($model,'email',array('style'=>"width:150px")) ?>
 		</div>
 		
 		<div class="row">
 			<?php //echo CHtml::activeLabelEx($model,UserModule::t('password'),array('style'=>"width:100px")); ?>
-			<label for="UserLogin_email" style="width: 100px"><?php echo UserModule::t('Password'); ?></label>
+			<label class="color_white" for="UserLogin_email" style="width: 100px"><?php echo UserModule::t('Password'); ?></label>
 			<?php echo CHtml::activePasswordField($model,'password',array('style'=>"width:150px")) ?>
 		</div>
 		<!--
