@@ -1,7 +1,7 @@
 <?php
 
 // change the following paths if necessary
-$yii=dirname(__FILE__).'/../../../../../WebServer/www/yii/framework/yii.php';
+//$yii=dirname(__FILE__).'/../../../../../WebServer/www/yii/framework/yii.php';
 //$yii= 'D:\WebServer\www\yii\framework\yii.php';
 
 $hostname = $_SERVER['SERVER_NAME'];
